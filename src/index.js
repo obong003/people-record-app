@@ -2,13 +2,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
 const dbSetup = require("./database/setup");
+const records = require('./model/schema_record');
 
 //middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// SCHEMA setup
-const records = require('./model/schema_record');
+//app.use(express.urlencoded({ extended: true }));
 
 //Mongoose Database SETUP
 dbSetup();
@@ -28,7 +26,7 @@ app.post('/records/post', (req, res) => {
            
         }
     })
-})
+});
 
 // get request to retrieve a single record
 app.get('/records/find/:id', (req, res) => {
@@ -41,7 +39,7 @@ app.get('/records/find/:id', (req, res) => {
             return res.status(200).json({ message: data})
         }
     })
-})
+});
 
 //get request to retrieve a single record by id
 app.get('/records/:id', (req, res) => {
@@ -55,7 +53,7 @@ app.get('/records/:id', (req, res) => {
             return res.status(200).json({ message: data })
         }
     })
-})
+});
 
 //request to view all records
 app.get('/records', (req, res) => {
@@ -66,7 +64,7 @@ app.get('/records', (req, res) => {
             return res.status(200).json({message: data});
         }
     })
-    ``})
+    });
     
 // put request to update a single entity record
 app.put('/records', (req, res) => {
@@ -89,7 +87,7 @@ app.put('/records', (req, res) => {
         })
     }
        }) 
-    })
+    });
 
 //put request to update single entity using id
 app.put('/records/:id', (req, res) => {
@@ -114,7 +112,7 @@ app.put('/records/:id', (req, res) => {
             }
         }
     )
-    })
+    });
 
 //Delete request to delete an entity
 app.delete('/records/:id', (req, res) => {
@@ -127,7 +125,7 @@ app.delete('/records/:id', (req, res) => {
             return res.status(200).json({ message: "record successfully deleted"})
         }
     })
-})
+});
 
 
 

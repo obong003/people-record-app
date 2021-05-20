@@ -9,7 +9,6 @@ module.exports = function () {
         useCreateIndex: true
     }, (err) => {
         if (err) {
-           // return (console.log("error connecting to database"));
            return console.log({ message: err.message })
         } else {
             return (console.log("database up and running!"))
