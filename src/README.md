@@ -5,7 +5,7 @@ Tech Stack
 Server: Node, Express, Mongoose
 
 Hosted on Heroku
-https://people-records.herokuapp.com/
+https://https://records-people.herokuapp.com/
 
 API Routes
 With this API, you can do the following:
