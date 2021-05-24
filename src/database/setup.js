@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const connectionString = "mongodb://localhost:27017/appRecord";
+const connectionString = "mongodb+srv://idiyake:pauline0509@cluster0.vkukq.mongodb.net/appRecord?retryWrites=true&w=majority";
 
 module.exports = function () {
     mongoose.connect( connectionString, {
         useUnifiedTopology: true,
         useNewUrlParser: true,
+        useCreateIndex: true,
         useFindAndModify: false,
-        useCreateIndex: true
+       
     }, (err) => {
         if (err) {
            return console.log({ message: err.message })

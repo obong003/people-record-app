@@ -15,7 +15,7 @@ const recordSchema = new mongoose.Schema ({
         type: String,
         required: true
         }
-});
+}, { timestamps: true });
 
 const records  = mongoose.model('Recorder', recordSchema);
 

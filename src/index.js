@@ -64,6 +64,7 @@ app.get('/records', (req, res) => {
             return res.status(200).json({message: data});
         }
     })
+
     });
     
 // put request to update a single entity record
